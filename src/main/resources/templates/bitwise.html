@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Bitwise</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="card mb-2 mt-2">
+        <div class="card-header">
+            Bitwise operators
+        </div>
+        <div class="card-body">
+            <table class="table table-sm mb-2">
+                <thead>
+                <tr>
+                    <th scope="col">Operator</th>
+                    <th scope="col">Left operand</th>
+                    <th scope="col">Right operand</th>
+                    <th scope="col">Run</th>
+                    <th scope="col">Result</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th>NOT (~)</th>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="left ..." id="inputLeftNotOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="right ..." id="inputRightNotOperand" th:value="0" disabled>
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="runNotBitwiseProcess('not')">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td id="resultBitwiseNotOperation"></td>
+                </tr>
+                <tr>
+                    <th>AND (&)</th>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="left ..." id="inputLeftAndOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="right ..." id="inputRightAndOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="runAndBitwiseProcess('and')">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td id="resultBitwiseAndOperation"></td>
+                </tr>
+                <tr>
+                    <th>OR (|)</th>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="left ..." id="inputLeftOrOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="right ..." id="inputRightOrOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="runOrBitwiseProcess('or')">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td id="resultBitwiseOrOperation"></td>
+                </tr>
+                <tr>
+                    <th>XOR (^)</th>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="left ..." id="inputLeftXorOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="right ..." id="inputRightXorOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="runXorBitwiseProcess('xor')">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td id="resultBitwiseXorOperation"></td>
+                </tr>
+                <tr>
+                    <th>Left Shift (<<)</th>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="left ..." id="inputLeftLeftShiftOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="right ..." id="inputRightLeftShiftOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="runLeftShiftBitwiseProcess('leftShift')">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td id="resultBitwiseLeftShiftOperation"></td>
+                </tr>
+                <tr>
+                    <th>Right Shift (>>)</th>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="left ..." id="inputLeftRightShiftOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="right ..." id="inputRightRightShiftOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="runRightShiftBitwiseProcess('rightShift')">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td id="resultBitwiseRightShiftOperation"></td>
+                </tr>
+                <tr>
+                    <th>Zero Fill Right Shift (>>>)</th>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="left ..." id="inputLeftZeroFillRightShiftOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="right ..." id="inputRightZeroFillRightShiftOperand" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="runZeroFillRightShiftBitwiseProcess('zeroFillRightShift')">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td id="resultBitwiseZeroFillRightShiftOperation"></td>
+                </tr>
+                </tbody>
+            </table>
+            <div class="mt-3">
+                <hr>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col">
+                        <label for="leftBinaryOperand">Left operand</label>
+                        <textarea class="form-control" rows="3" name="text" id="leftBinaryOperand"></textarea>
+                    </div>
+                    <div class="col">
+                        <label for="rightBinaryOperand">Right operand</label>
+                        <textarea class="form-control" rows="3" name="text" id="rightBinaryOperand"></textarea>
+                    </div>
+                    <div class="col">
+                        <label for="resultBinaryBitwiseProcess">Result bitwise process</label>
+                        <textarea class="form-control" rows="3" name="text" id="resultBinaryBitwiseProcess"></textarea>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

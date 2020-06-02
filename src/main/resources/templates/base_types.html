@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Base types</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="card mb-2 mt-2">
+        <div class="card-header">
+            Primitive Data Types
+        </div>
+        <div class="card-body">
+            <table class="table table-dark table-sm">
+                <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Type</th>
+                    <th scope="col">Value (bit)</th>
+                    <th scope="col">Valid Range</th>
+                    <th scope="col">Default Value</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <th scope="row">1</th>
+                    <td>byte</td>
+                    <td>8</td>
+                    <td>-128 - 127</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="row">2</th>
+                    <td>short</td>
+                    <td>16</td>
+                    <td>-32,768 - 32,767</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="row">3</th>
+                    <td>int</td>
+                    <td>32</td>
+                    <td>-2,147,483,648 - 2,147,483,647</td>
+                    <td>0</td>
+                </tr>
+                <tr>
+                    <th scope="row">4</th>
+                    <td>long</td>
+                    <td>64</td>
+                    <td>-9,223,372,036,854,775,808 - 9,223,372,036,854,775,807</td>
+                    <td>0L</td>
+                </tr>
+                <tr>
+                    <th scope="row">5</th>
+                    <td>float</td>
+                    <td>32</td>
+                    <td>-1.4E-45 - 3.4028235E38</td>
+                    <td>0.0f</td>
+                </tr>
+                <tr>
+                    <th scope="row">6</th>
+                    <td>double</td>
+                    <td>64</td>
+                    <td>-4.9E-324 - 1.7976931348623157E308</td>
+                    <td>0.0d</td>
+                </tr>
+                <tr>
+                    <th scope="row">7</th>
+                    <td>char</td>
+                    <td>16</td>
+                    <td>0 - 65536</td>
+                    <td>'\u0000'</td>
+                </tr>
+                <tr>
+                    <th scope="row">8</th>
+                    <td>boolean</td>
+                    <td>8 - 32</td>
+                    <td>true/false</td>
+                    <td>false</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card mb-2 mt-2">
+        <div class="card-header">
+            Demonstration of conversion of primitive types to binary code
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="byteType">
+                        byte
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="shortType">
+                        short
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="intType">
+                        int
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="longType">
+                        long
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="floatType">
+                        float
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="doubleType">
+                        double
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="charType">
+                        char
+                    </button>
+                </div>
+                <div class="col">
+                    <button class="btn btn-secondary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample" id="booleanType">
+                        boolean
+                    </button>
+                </div>
+            </div>
+            <div class="collapse mt-3" id="collapseExample">
+                <hr>
+                <div class="row justify-content-center align-items-center">
+                    <div class="col-5"><textarea class="form-control" rows="3" name="text" id="primitiveValue"></textarea></div>
+                    <div class="col-2 text-center">
+                        <button class="btn btn-secondary" type="button" onclick="convert()">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <div class="col-5"><textarea class="form-control" rows="3" name="text" id="resultConversion"></textarea></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

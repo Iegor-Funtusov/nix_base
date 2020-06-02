@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Circle</title>
+</head>
+<body>
+<div layout:fragment="content">
+    <div class="card mb-2 mt-2">
+        <div class="card-header">
+            Circle time statistics
+        </div>
+        <div class="card-body">
+            <table class="table table-sm mb-2">
+                <thead>
+                <tr>
+                    <th scope="col">from</th>
+                    <th scope="col">to</th>
+                    <th scope="col">for t (ms.)</th>
+                    <th scope="col">while t (ms.)</th>
+                    <th scope="col">forEach t (ms.)</th>
+                    <th scope="col">forEachStream t (ms.)</th>
+                    <th scope="col">math t (ms.)</th>
+                    <th scope="col">run</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="from ..." id="inputRangeFrom" th:value="0">
+                        </div>
+                    </td>
+                    <td>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="to ..." id="inputRangeTo">
+                        </div>
+                    </td>
+                    <td id="forTime">0</td>
+                    <td id="whileTime">0</td>
+                    <td id="forEachTime">0</td>
+                    <td id="forEachStreamTime">0</td>
+                    <td id="mathTime">0</td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="runSum()">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+            <table class="table table-sm mb-2">
+                <thead>
+                <tr>
+                    <th scope="col">forSum</th>
+                    <th scope="col">whileSum</th>
+                    <th scope="col">forEachSum</th>
+                    <th scope="col">forEachStreamSum</th>
+                    <th scope="col">mathSum</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td id="forSum">0</td>
+                    <td id="whileSum">0</td>
+                    <td id="forEachSum">0</td>
+                    <td id="forEachStreamSum">0</td>
+                    <td id="mathSum">0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="card mb-2 mt-2">
+        <div class="card-header">
+            Convert string to number and find sum
+        </div>
+        <div class="card-body">
+            <table class="table table-sm mb-2">
+                <thead>
+                <tr>
+                    <th scope="col">from</th>
+                    <th scope="col">run</th>
+                    <th scope="col">result</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="input value ..." id="inputStringValue" th:value="1">
+                        </div>
+                    </td>
+                    <td>
+                        <button class="btn btn-secondary" type="button" onclick="convertStringToNumberAndFindSum()">
+                            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+                        </button>
+                    </td>
+                    <td id="resultStringValue">0</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</body>
+</html>
